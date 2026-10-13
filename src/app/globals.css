@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-newsreader), "Newsreader", Georgia, serif;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --color-olive-50: #f7f8ee;
+  --color-olive-100: #eeefd8;
+  --color-olive-200: #dde1b2;
+  --color-olive-500: #8a931c;
+  --color-olive-600: #7b8318;
+  --color-olive-700: #676e13;
+  
+  --color-sand-50: #fafaf7;
+  --color-sand-100: #f4f4ec;
+  --color-sand-200: #eaeae0;
+  
+  --color-charcoal-900: #121312;
+  --color-charcoal-800: #1d1e1c;
+  --color-charcoal-700: #2d2e2b;
+}
+
+:root {
+  --background: #fafaf7;
+  --foreground: #121312;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Subtle custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fafaf7;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8d8ce;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8a931c;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-8deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.95; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
